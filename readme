@@ -1,0 +1,3 @@
+Fot image ooptimization
+Required package:composer require intervention/image
+sudo apt-get install php-gd  # For GD

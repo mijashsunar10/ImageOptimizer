@@ -19,4 +19,12 @@ Route::middleware(['auth'])->group(function () {
     Volt::route('settings/appearance', 'settings.appearance')->name('settings.appearance');
 });
 
+// routes/web.php
+use App\Http\Controllers\ImageController;
+
+Route::get('/images/upload', [ImageController::class, 'create'])->name('images.create');
+Route::post('/images', [ImageController::class, 'store'])->name('images.store');
+Route::get('/images/{image}', [ImageController::class, 'show'])->name('images.show');
+
+Route::get('/images', [ImageController::class, 'index'])->name('images.index');
 require __DIR__.'/auth.php';
